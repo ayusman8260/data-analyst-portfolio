@@ -1,0 +1,8 @@
+test,statistic,p_value
+chi-square: International plan vs churn,222.6,2.4931077033159556e-50
+chi-square: Voice mail plan vs churn,34.1,5.15063965903898e-09
+chi-square: Area code vs churn,0.2,0.9150556960243712
+chi-square: service_calls_bucket vs churn,327.4,1.358138739918031e-69
+"Welch t-test: Total day minutes, churned vs retained",9.68,1.2189683063650916e-20
+"Welch t-test: Total intl minutes, churned vs retained",3.94,9.065714718803057e-05
+"Welch t-test: Account length, churned vs retained",0.96,0.33645751767927423

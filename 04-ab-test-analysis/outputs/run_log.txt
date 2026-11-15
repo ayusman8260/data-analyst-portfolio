@@ -1,0 +1,18 @@
+Group sizes:
+version
+gate_40    45489
+gate_30    44700
+Sample-ratio-mismatch p-value: 0.009 (borderline: passes the strict 0.001 alarm level but is worth flagging and investigating)
+Outliers: 91 users above the 99.9th percentile (1074 rounds). Irrelevant for retention proportions, but they distort round-count means.
+
+      metric  gate_30_rate  gate_40_rate  abs_lift_pp  rel_lift_pct  ci95_low_pp  ci95_high_pp       z  p_value
+retention_1        0.4482        0.4423      -0.5905       -1.3176      -1.2393        0.0582 -1.7841   0.0744
+retention_7        0.1902        0.1820      -0.8201       -4.3119      -1.3282       -0.3121 -3.1644   0.0016
+
+Bootstrap 7-day retention diff (gate_40 - gate_30): mean -0.819 pp, 95% interval [-1.319, -0.329] pp; P(diff<0) = 0.999
+
+Power: with n=44,700 per group the smallest detectable 7-day lift is 0.74 pp (80% power, alpha=0.05).
+To detect a 0.5 pp change you would need ~96,714 users per group.
+(7-day p-value 0.0016 vs Bonferroni-adjusted alpha 0.025 for two metrics: still significant)
+
+DECISION: Do NOT move the gate to level 40: 7-day retention is significantly lower.

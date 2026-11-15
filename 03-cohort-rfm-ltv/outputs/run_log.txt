@@ -1,0 +1,16 @@
+Cohorts analysed: 19 (2017-01 to 2018-07), 88,488 customers
+Month-1 retention: mean across cohorts 0.48% | pooled 0.48%
+
+RFM segments:
+                               customers     revenue  avg_value  pct_customers  pct_revenue
+segment                                                                                   
+Recent high-value (1 order)       14729  3946654.51     267.95          15.51        29.25
+Lapsed high-value (1 order)       14002  3891477.43     277.92          14.74        28.84
+Mid-recency (1 order)             18386  2399380.50     130.50          19.36        17.78
+Lapsed lower-value (1 order)      22956  1280993.79      55.80          24.17         9.49
+Recent lower-value (1 order)      22023  1225426.08      55.64          23.19         9.08
+Repeat buyers                      2887   750468.43     259.95           3.04         5.56
+
+AOV: 137.42 | orders per customer: 1.034 | historical LTV: 142.07 | repeat rate: 3.04%
+
+Outputs written to /home/claude/portfolio/03-cohort-rfm-ltv/outputs

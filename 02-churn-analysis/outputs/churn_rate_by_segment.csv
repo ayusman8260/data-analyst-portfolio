@@ -1,0 +1,13 @@
+segment,level,customers,churn_rate_pct
+International plan,No,3010,11.5
+International plan,Yes,323,42.4
+Customer service calls,0,697,13.2
+Customer service calls,1,1181,10.3
+Customer service calls,2,759,11.5
+Customer service calls,3,429,10.3
+Customer service calls,4+,267,51.7
+Voice mail plan,No,2411,16.7
+Voice mail plan,Yes,922,8.7
+Area code,408,838,14.6
+Area code,415,1655,14.3
+Area code,510,840,14.9

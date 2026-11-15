@@ -1,0 +1,7 @@
+segment,customers,revenue,avg_value,pct_customers,pct_revenue
+Recent high-value (1 order),14729,3946654.51,267.95,15.51,29.25
+Lapsed high-value (1 order),14002,3891477.43,277.92,14.74,28.84
+Mid-recency (1 order),18386,2399380.5,130.5,19.36,17.78
+Lapsed lower-value (1 order),22956,1280993.79,55.8,24.17,9.49
+Recent lower-value (1 order),22023,1225426.08,55.64,23.19,9.08
+Repeat buyers,2887,750468.43,259.95,3.04,5.56

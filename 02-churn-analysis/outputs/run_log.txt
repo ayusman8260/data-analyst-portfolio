@@ -1,0 +1,79 @@
+Rows: 3,333 | churn rate: 14.5%
+
+                segment level  customers  churn_rate_pct
+    International plan    No       3010            11.5
+    International plan   Yes        323            42.4
+Customer service calls     0        697            13.2
+Customer service calls     1       1181            10.3
+Customer service calls     2        759            11.5
+Customer service calls     3        429            10.3
+Customer service calls    4+        267            51.7
+       Voice mail plan    No       2411            16.7
+       Voice mail plan   Yes        922             8.7
+             Area code   408        838            14.6
+             Area code   415       1655            14.3
+             Area code   510        840            14.9
+
+Highest-churn states (small samples, interpret with care):
+        mean  size
+State            
+CA     26.5    34
+NJ     26.5    68
+TX     25.0    72
+MD     24.3    70
+SC     23.3    60
+
+                                                  test  statistic      p_value
+              chi-square: International plan vs churn     222.60 2.493108e-50
+                 chi-square: Voice mail plan vs churn      34.10 5.150640e-09
+                       chi-square: Area code vs churn       0.20 9.150557e-01
+            chi-square: service_calls_bucket vs churn     327.40 1.358139e-69
+ Welch t-test: Total day minutes, churned vs retained       9.68 1.218968e-20
+Welch t-test: Total intl minutes, churned vs retained       3.94 9.065715e-05
+    Welch t-test: Account length, churned vs retained       0.96 3.364575e-01
+
+--- Logistic Regression (threshold=0.5) ---
+              precision    recall  f1-score   support
+
+    retained       0.94      0.76      0.84       570
+     churned       0.35      0.73      0.47        97
+
+    accuracy                           0.76       667
+   macro avg       0.65      0.75      0.66       667
+weighted avg       0.86      0.76      0.79       667
+
+ROC-AUC: 0.815
+
+--- Random Forest (threshold=0.5) ---
+              precision    recall  f1-score   support
+
+    retained       0.96      0.93      0.94       570
+     churned       0.65      0.77      0.71        97
+
+    accuracy                           0.91       667
+   macro avg       0.81      0.85      0.83       667
+weighted avg       0.92      0.91      0.91       667
+
+ROC-AUC: 0.887
+Random Forest @ threshold 0.3: precision 0.45, recall 0.82
+Random Forest @ threshold 0.4: precision 0.57, recall 0.82
+Random Forest @ threshold 0.5: precision 0.65, recall 0.77
+Random Forest @ threshold 0.6: precision 0.75, recall 0.70
+
+Top 10% highest-risk customers (66) contain 58% of all churners; lift = 5.8x (Random Forest).
+
+Logit coefficients (standardized), strongest:
+ Voice mail plan          -0.93
+Customer service calls    0.82
+International plan        0.70
+Total day minutes         0.67
+Number vmail messages     0.59
+Total eve minutes         0.35
+
+Top churn drivers (random forest):
+ Total day minutes         0.265
+Customer service calls    0.177
+International plan        0.098
+Total eve minutes         0.084
+Total intl minutes        0.058
+Total night minutes       0.050
